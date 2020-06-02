@@ -5,14 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="WeatherForecast.fs" />
     <Compile Include="Models/LaranjoModel.fs" />
     <Compile Include="Services/LaranjoConfig.fs" />
     <Compile Include="Services/LaranjoInit.fs" />
     <Compile Include="Services/LaranjoIn.fs" />
     <Compile Include="Services/LaranjoOut.fs" />
     <Compile Include="Controllers/LaranjoController.fs" />
-    <Compile Include="Controllers/WeatherForecastController.fs" />
     <Compile Include="Startup.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
