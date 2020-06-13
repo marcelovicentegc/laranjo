@@ -1,13 +1,13 @@
-FROM microsoft/dotnet-preview
-
-RUN mkdir /app
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1
 WORKDIR /app
 
-COPY Laranjo.fsproj .
+# Copy csproj and restore as distinct layers
+COPY *.fsproj ./
 RUN dotnet restore
 
-COPY . .
+# Copy everything else and build
+COPY . ./
 RUN dotnet publish -c Release -o out
 
-EXPOSE 5000/tcp
-CMD ["dotnet", "out/Laranjo.dll"]
+
+CMD dotnet out/Laranjo.dll
