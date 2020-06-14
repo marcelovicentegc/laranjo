@@ -1,0 +1,1 @@
+web: dotnet build dotnet run http://+:$PORT ${CORE_ENVIRONMENT}
