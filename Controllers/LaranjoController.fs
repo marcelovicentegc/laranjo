@@ -20,3 +20,12 @@ type Laranjo(logger: ILogger<Laranjo>) =
         | txt when txt.EndsWith("laranjin") -> LaranjoIn(data).run
         | txt when txt.EndsWith("laranjout") -> LaranjoOut(data).run
         | __ -> "Comando não reconhecido"
+
+
+    [<HttpGet>]
+    member __.Get(): string =
+        let commands =
+            " { commands: [ \"laranjo_config\", \"laranjo_init\", \"laranjin\", \"laranjout\"] }"
+
+        logger.LogInformation(commands)
+        commands
